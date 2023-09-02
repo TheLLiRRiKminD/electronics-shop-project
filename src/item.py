@@ -53,6 +53,7 @@ class Item:
 
     @classmethod
     def instantiate_from_csv(cls):
+        Item.all.clear()
         with open(path, newline='') as csvfile:
             reader = csv.DictReader(csvfile)
             for item in reader:
