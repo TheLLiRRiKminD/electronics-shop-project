@@ -19,11 +19,13 @@ def test_item_creation(item_instance):
 # Тест на расчет общей стоимости товара
 def test_calculate_total_price(item_instance):
     item = item_instance
+
     total_price = item.calculate_total_price()
     assert total_price == 50.0
 
 
 # Тест на применение скидки
+
 def test_apply_discount(item_instance):
     item = item_instance
     item.pay_rate = 0.8
@@ -40,7 +42,6 @@ def test_item_added_to_all():
 # Тест для проверки геттера и сеттера name
 def test_name_getter_setter(item_instance):
     assert item_instance.name == "TestItem"
-
     item_instance.name = "ThisIsALongName"
     assert item_instance.name == "ThisIsALon"
 
@@ -49,3 +50,4 @@ def test_name_getter_setter(item_instance):
 def test_string_to_number():
     assert Item.string_to_number("10.5") == 10
     assert Item.string_to_number("20.7") == 20
+    assert item in Item.all
