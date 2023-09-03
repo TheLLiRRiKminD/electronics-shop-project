@@ -50,3 +50,15 @@ def test_name_getter_setter(item_instance):
 def test_string_to_number():
     assert Item.string_to_number("10.5") == 10
     assert Item.string_to_number("20.7") == 20
+
+
+def test_repr():
+    item = Item("Example Item", 10, 3)
+    expected_repr = "Item('Example Item', 10, 3)"
+    assert repr(item) == expected_repr
+
+
+def test_str(item_instance):
+    item = item_instance
+    expected_str = "TestItem"
+    assert str(item) == expected_str
