@@ -50,4 +50,3 @@ def test_name_getter_setter(item_instance):
 def test_string_to_number():
     assert Item.string_to_number("10.5") == 10
     assert Item.string_to_number("20.7") == 20
-    assert item in Item.all
