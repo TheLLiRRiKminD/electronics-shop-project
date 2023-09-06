@@ -19,7 +19,6 @@ def test_item_creation(item_instance):
 # Тест на расчет общей стоимости товара
 def test_calculate_total_price(item_instance):
     item = item_instance
-
     total_price = item.calculate_total_price()
     assert total_price == 50.0
 
@@ -62,3 +61,18 @@ def test_str(item_instance):
     item = item_instance
     expected_str = "TestItem"
     assert str(item) == expected_str
+
+
+# Тест для проверки операции сложения
+def test_item_addition():
+    item1 = Item("Item 1", 10.0, 5)
+    item2 = Item("Item 2", 20.0, 3)
+    result = item1 + item2
+    assert result == 8  # Результат сложения должен быть равен сумме количества товаров
+
+
+# Тест для проверки исключения при сложении с неправильным типом
+def test_item_addition_with_wrong_type():
+    item = Item("Item 1", 10.0, 5)
+    with pytest.raises(ValueError):
+        result = item + 5  # Попытка сложения с неправильным типом должна вызывать исключение
