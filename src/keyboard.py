@@ -22,3 +22,4 @@ class Keyboard(Item, MixinLog):
     def __init__(self, name, price, quantity) -> None:
         super().__init__(name, price, quantity)
         MixinLog.__init__(self)
+
